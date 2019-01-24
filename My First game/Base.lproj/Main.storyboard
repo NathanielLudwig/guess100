@@ -1,26 +1,103 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="My_First_game_2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess a number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxK-Fw-RfS">
+                                <rect key="frame" x="0.0" y="66" width="414" height="22.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guesses : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKG-fq-cVR">
+                                <rect key="frame" x="0.0" y="112.66666666666667" width="414" height="22.000000000000014"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sR-14-P9p" userLabel="Status">
+                                <rect key="frame" x="0.0" y="812" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Fse-VO-cRY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxF-gY-ZaQ">
+                                <rect key="frame" x="50" y="142.66666666666669" width="314" height="589.33333333333326"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VLW-cJ-Ccb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ea1-OP-aAG"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYy-5M-2S9">
+                                <rect key="frame" x="140" y="740" width="134" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="TFq-Fx-idr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Check">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3hJ-kx-hQ8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DxF-gY-ZaQ" firstAttribute="top" secondItem="RKG-fq-cVR" secondAttribute="bottom" constant="8" id="1UY-Tb-icG"/>
+                            <constraint firstItem="DxF-gY-ZaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="5Dw-vi-wtN"/>
+                            <constraint firstItem="qYy-5M-2S9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="120" id="8N9-zb-3yd"/>
+                            <constraint firstItem="7sR-14-P9p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ArR-Ut-imv"/>
+                            <constraint firstItem="rxK-Fw-RfS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="Day-Cj-UGk"/>
+                            <constraint firstItem="qYy-5M-2S9" firstAttribute="top" secondItem="DxF-gY-ZaQ" secondAttribute="bottom" constant="8" id="FK3-yt-dgU"/>
+                            <constraint firstItem="7sR-14-P9p" firstAttribute="top" secondItem="qYy-5M-2S9" secondAttribute="bottom" constant="30" id="HuR-fA-uHa"/>
+                            <constraint firstAttribute="trailing" secondItem="7sR-14-P9p" secondAttribute="trailing" id="LMj-xg-iJy"/>
+                            <constraint firstAttribute="trailing" secondItem="RKG-fq-cVR" secondAttribute="trailing" id="UNY-42-r6M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7sR-14-P9p" secondAttribute="bottom" constant="30" id="d4d-yR-CJZ"/>
+                            <constraint firstAttribute="trailing" secondItem="rxK-Fw-RfS" secondAttribute="trailing" id="l0F-dV-F9x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qYy-5M-2S9" secondAttribute="trailing" constant="120" id="mgk-WY-pqw"/>
+                            <constraint firstItem="RKG-fq-cVR" firstAttribute="top" secondItem="rxK-Fw-RfS" secondAttribute="bottom" constant="24" id="nbL-DE-gxu"/>
+                            <constraint firstItem="rxK-Fw-RfS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ntv-gl-QVi"/>
+                            <constraint firstAttribute="trailing" secondItem="DxF-gY-ZaQ" secondAttribute="trailing" constant="50" id="qBL-KU-Bk3"/>
+                            <constraint firstItem="RKG-fq-cVR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vAs-xt-gdt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guessBox" destination="RKG-fq-cVR" id="uGw-Uq-kYD"/>
+                        <outlet property="pickerView" destination="DxF-gY-ZaQ" id="2N9-54-DAV"/>
+                        <outlet property="status" destination="7sR-14-P9p" id="Vsv-0B-md1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="266.39999999999998" y="848.72563718140941"/>
         </scene>
     </scenes>
 </document>
